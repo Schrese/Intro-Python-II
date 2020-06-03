@@ -49,3 +49,33 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+
+
+# MY OWN STUFF
+
+# create input variable
+
+# create a new player
+
+
+# player starts the game
+
+# While the game is going: 
+
+# Print current room name and description
+    # Print next options
+
+# player inputs direction they want to move in 
+    # print if direction is available to the player
+        # set current room to this new room
+
+    # if direction is not available, have them pick another direction
+    # 
+
+
+
+
+
+
+# Player ends the game
