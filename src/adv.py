@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -53,25 +54,55 @@ room['treasure'].s_to = room['narrow']
 
 
 # MY OWN STUFF
+# Making sure that everything works
+# player1 = Player('Hugo', "outside")
+# player1.current_room = "outside"
+
+# player1.current_room = room["foyer"].name
+
+# print(player1.current_room)
+# print(room["outside"].name)
+
+
+
+
 
 # create input variable
 
 # create a new player
+player1 = Player('Hugo', "outside")
 
+# set value for gamestate
+stop_play = False
 
 # player starts the game
+    # print instructions
+print("Welcom to this game... %s" % (player1.name))
+print("You'll be trying to find your way out of this house... if there is a way...")
+print("I'll just need a bit of input from you...")
+print("Are you ready? ")
+print("GOOD!")
+print("remember, you can always quit the game by entering 'q'")
+
 
 # While the game is going: 
+# while not stop_play:
 
 # Print current room name and description
     # Print next options
+print("Right now you are in the %s and %s" % (room[player1.current_room].name, room[player1.current_room].description))
+
 
 # player inputs direction they want to move in 
     # print if direction is available to the player
         # set current room to this new room
-
+new_direc = input("Where would you like to go next? North, South, East, or West? Choose Wisely...")
+print(new_direc)
+if room[player1.current_room].new_direc == "empty":
+    print('there is no room there') 
     # if direction is not available, have them pick another direction
-    # 
+else:
+    player1.current_room == room[player1.current_room].new_direc
 
 
 
