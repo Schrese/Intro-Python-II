@@ -10,6 +10,8 @@ class Room:
 
     def __str__(self):
         return f"|\nYou find yourself in {self.name}, as you look around, you see {self.description}"
+    
+    def print_items()
 
 
 # class VisibleItems(Room):

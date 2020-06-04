@@ -37,16 +37,19 @@ room['narrow'].north_to = room['treasure']
 room['treasure'].south_to = room['narrow']
 
 # Create all of the treasure options
-coin = Item("Coin", "It has an oddly dark shimmer, and seems to be calling you, you also notice a footprint on the railing")
-spoon = Item("Spoon", "It looks plastic, and seems to have been used")
-harpoon = Item("Harpoon", "It's hanging from the wall, you wonder if it's ever been used before")
-potion = Item("Potion", "It looks dark black and viscous")
-notebook = Item("Notebook", "It looks to be covered in dust, but you see no creases on the binding to suggest it has ever been used")
-rug = Item("Rug", "It begins to shimmer and move around, then suddenly envelops you... Or at least that's what you saw when you entered, but as you open your eyes again you see the rug laying there idly and think to yourself that you shoud maybe walk around thet rug instead of over it")
+ind_item = {
+    'coin' : Item("Coin", "It has an oddly dark shimmer, and seems to be calling you, you also notice a footprint on the railing"), 
+    'spoon' : Item("Spoon", "It looks plastic, and seems to have been used"), 
+    'harpoon' : Item("Harpoon", "It's hanging from the wall, you wonder if it's ever been used before"), 
+    'potion' : Item("Potion", "It looks dark black and viscous"), 
+    'notebook' : Item("Notebook", "It looks to be covered in dust, but you see no creases on the binding to suggest it haends ever been used"), 
+    'rug' : Item("Rug", "It begins to shimmer and move around, then suddenly envelops you... Or at least that's what you saw when you entered, but as you open your eyes again you see the rug laying there idly and think to yourself that you shoud maybe walk around thet rug instead of over it") ,
+}
 
 # Treasure Assignments
-room['foyer'].items = [coin, spoon, harpoon, potion, notebook, rug]
-print(room['treasure'].items)
+print(ind_item)
+room['foyer'].items = [ind_item.coin]
+print(room['foyer'].items)
 
 
 player1 = Player("Frank", room["outside"])
