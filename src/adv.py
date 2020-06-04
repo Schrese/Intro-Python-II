@@ -34,7 +34,7 @@ room['narrow'].west_to = room['foyer']
 room['narrow'].north_to = room['treasure']
 room['treasure'].south_to = room['narrow']
 
-player1 = Player(room["outside"])
+player1 = Player("Frank", room["outside"])
 # print(room['outside'])
 # print(player1.current_room)
 
@@ -56,7 +56,7 @@ information = print(player1.current_room)
 while True:
     information
 
-    entered = input("Where would you like to go next?")
+    entered = input(f"|\nWhere would you like to go next, {player1.name}?")
 
     if entered == 'north':
         check_room(player1, entered)
@@ -74,13 +74,6 @@ while True:
         break
     else:
         print("I don't understand. Be sure you entered 'north', 'south', 'east' 'west', or 'end")
-
-
-
-
-
-
-
 
 
 
