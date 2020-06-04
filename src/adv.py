@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -24,14 +25,67 @@ earlier adventurers. The only exit is to the south."""),
 
 # Link rooms together
 
-room['outside'].n_to = room['foyer']
-room['foyer'].s_to = room['outside']
-room['foyer'].n_to = room['overlook']
-room['foyer'].e_to = room['narrow']
-room['overlook'].s_to = room['foyer']
-room['narrow'].w_to = room['foyer']
-room['narrow'].n_to = room['treasure']
-room['treasure'].s_to = room['narrow']
+room['outside'].north_to = room['foyer']
+room['foyer'].south_to = room['outside']
+room['foyer'].north_to = room['overlook']
+room['foyer'].east_to = room['narrow']
+room['overlook'].south_to = room['foyer']
+room['narrow'].west_to = room['foyer']
+room['narrow'].north_to = room['treasure']
+room['treasure'].south_to = room['narrow']
+
+player1 = Player(room["outside"])
+# print(room['outside'])
+# print(player1.current_room)
+
+# entered = input(f"Hello, {player1.name}... Time for a little game... if you want to stop just enter 'end'... hopefully that will work")
+
+def check_room(player, direction):
+    attribute = direction + '_to'
+    if hasattr(player.current_room, attribute): 
+        player.current_room = getattr(player.current_room, attribute)
+        print(player1.current_room)
+    else: 
+        print("There doesn't seem to be anywhere to go over there, choose another direction")
+
+    
+print("Your choices are 'north', 'south', 'east', 'west', and 'end'....... Choose Carefully")
+
+information = print(player1.current_room)
+
+while True:
+    information
+
+    entered = input("Where would you like to go next?")
+
+    if entered == 'north':
+        check_room(player1, entered)
+
+    elif entered == 'south':
+        check_room(player1, entered)
+
+    elif entered == 'east':
+        check_room(player1, entered)
+
+    elif entered == 'west':
+        check_room(player1, entered)
+
+    elif entered == 'end':
+        break
+    else:
+        print("I don't understand. Be sure you entered 'north', 'south', 'east' 'west', or 'end")
+
+
+
+
+
+
+
+
+
+
+
+
 
 #
 # Main
